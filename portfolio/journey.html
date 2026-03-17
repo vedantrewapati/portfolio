@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    /* 360-Degree Theme Persistence (Flash Prevention) */
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      const bg = savedTheme === 'dark' ? '#0D0D0E' : '#FFFFFF';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.style.backgroundColor = bg;
+    })();
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Journey | Vedant Rewapati</title>
+    <meta name="description" content="The academic and personal journey of Vedant Rewapati — Voyage from Indore to JEC Jabaulpur.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="journey.css">
+</head>
+<body class="subpage">
+    <canvas id="stardust-canvas"></canvas>
+
+    <div class="subpage-nav">
+        <button id="theme-toggle" class="theme-switch subpage-theme-toggle" aria-label="Toggle Paradox Mode">
+            <i class="ph ph-sun" id="theme-icon"></i>
+        </button>
+    </div>
+
+    <!-- Universal Anchor (FAB) -->
+    <div class="universal-anchor-wrap">
+        <a href="index.html" class="universal-anchor" onclick="returnToOrbit(); return false;">
+            <i class="ph ph-arrow-left"></i>
+            <span class="anchor-text">Return to Orbit</span>
+        </a>
+    </div>
+
+    <div id="scroll-container">
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <header class="journey-hero">
+        <div class="hero-bg-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+        </div>
+        <div class="section-inner fade-in">
+            <p class="journey-tag">✦ Voyage Log</p>
+            <h1 class="journey-title">The Journey</h1>
+            <p class="journey-subtitle">Mapping the trajectory of stars and milestones.</p>
+        </div>
+    </header>
+
+    <!-- ═══════════════ TIMELINE ═══════════════ -->
+    <main class="journey-container">
+        <div class="timeline-wrapper">
+            <!-- The vertical line that draws itself -->
+            <div id="timeline-line" class="timeline-line"></div>
+            
+            <div class="milestone-list">
+                <!-- Milestone: Launch -->
+                <div class="milestone-item fade-in-up">
+                    <div class="milestone-marker">
+                        <i class="ph ph-star-four"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <span class="milestone-date">Feb 16, 2008</span>
+                        <h2 class="milestone-title">Launch Day</h2>
+                        <p class="milestone-desc">Born in the vibrant city of <strong>Indore</strong>, marking the start of this cosmic voyage.</p>
+                        <div class="milestone-popover glass-card">
+                            <p>Indore, M.P. · 22.7196° N, 75.8577° E</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone: Early Orbit -->
+                <div class="milestone-item fade-in-up">
+                    <div class="milestone-marker">
+                        <i class="ph ph-school"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <span class="milestone-date">LKG - 5th Standard</span>
+                        <h2 class="milestone-title">Early Orbit</h2>
+                        <p class="milestone-desc">Childhood years spent at <strong>Gurukul, Sanawad</strong>. Forming the basic gravitational pull toward learning.</p>
+                        <div class="milestone-popover glass-card">
+                            <p>Gurukul School, Sanawad · Primary Education</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone: Mid-Flight -->
+                <div class="milestone-item fade-in-up">
+                    <div class="milestone-marker">
+                        <i class="ph ph-buildings"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <span class="milestone-date">6th - 10th Standard</span>
+                        <h2 class="milestone-title">Mid-Flight</h2>
+                        <p class="milestone-desc">Navigating through middle and high school at <strong>Vimala Convent Hr. Sec. School, Sanawad</strong>.</p>
+                        <div class="milestone-popover glass-card">
+                            <p>Vimala Convent · Academic Rigor · Foundational Years</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone: Trajectory Shift -->
+                <div class="milestone-item fade-in-up">
+                    <div class="milestone-marker">
+                        <i class="ph ph-rocket-launch"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <span class="milestone-date">11th - 12th Standard</span>
+                        <h2 class="milestone-title">Trajectory Shift</h2>
+                        <p class="milestone-desc">Accelerated shift to <strong>Allen Career Institute, Indore</strong>. Focused deep-space research (PCM).</p>
+                        <div class="milestone-popover glass-card">
+                            <p>Allen Indore · JEE Prep · Pursuit of Excellence</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milestone: Current Station -->
+                <div id="jec-station" class="milestone-item fade-in-up">
+                    <div class="milestone-marker">
+                        <i class="ph ph-graduation-cap"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <span class="milestone-date">2026 (Now)</span>
+                        <h2 class="milestone-title">Current Station</h2>
+                        <p class="milestone-desc">Successfully docked at <strong>Jabalpur Engineering College (JEC)</strong>, pursuing IT Engineering.</p>
+                        <div class="milestone-popover glass-card">
+                            <p>JEC Jabalpur · Information Technology · Exploring Tech & Space</p>
+                        </div>
+                    </div>
+                </div>
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <p class="footer-copy">© 2026 · Crafted with curiosity &amp; coffee · Jabalpur 🌌</p>
+        </div>
+    </footer>
+    </div>
+
+    <script src="journey.js"></script>
+    <!-- Celestial Transitions -->
+    <div id="black-hole-overlay" class="stellar-overlay"></div>
+    <div id="white-hole-overlay" class="stellar-overlay"></div>
+
+    <!-- Magnetic Paradox Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

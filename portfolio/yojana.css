@@ -1,0 +1,294 @@
+/* ═══════════════════════════════════════════
+   YOJANA 360 Showcase — yojana.css
+═══════════════════════════════════════════ */
+
+/* Global variables from style.css used */
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+body.transitioning {
+    overflow: hidden !important;
+}
+
+.yojana-container {
+    max-width: 1100px;
+    margin: 8rem auto 4rem;
+    padding: 0 2rem;
+}
+
+.yojana-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.yojana-title {
+    font-family: var(--ff-head);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 800;
+    margin: 1rem 0;
+    background: linear-gradient(135deg, var(--text-main), var(--accent-navy));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* Crucial for clip */
+}
+
+.yojana-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-sub);
+    margin-bottom: 4rem;
+}
+
+.section-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent-navy);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* IMPACT STATS */
+.impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-navy);
+    box-shadow: var(--shadow-soft);
+}
+
+.stat-value {
+    display: block;
+    font-family: var(--ff-head);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-navy);
+}
+
+.stat-card p {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    font-weight: 700;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* GALLERY */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    cursor: pointer;
+    overflow: hidden;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    border-color: var(--accent-navy);
+    background: var(--bg-secondary);
+    box-shadow: var(--shadow-navy);
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 0.8rem;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    background: #f0f0f0;
+}
+
+.gallery-item span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    text-align: center;
+}
+
+/* HOW IT WORKS */
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.step-card {
+    padding: 2rem;
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-navy);
+}
+
+.step-num {
+    font-family: var(--ff-head);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--surface);
+    -webkit-text-stroke: 1px var(--accent);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.step-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.step-card p {
+    font-size: 0.95rem;
+    color: var(--text-sub);
+}
+
+/* BEHIND DEV (Reuse from earlier but refined) */
+.yojana-section {
+    margin-bottom: 8rem;
+}
+
+.category-heading {
+    font-family: var(--ff-head);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.category-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--accent-navy), transparent);
+}
+
+.dev-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.dev-card { 
+    padding: 2.5rem; 
+    background: var(--bg-primary);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+.dev-card h3 { color: var(--accent-navy); margin-bottom: 1rem; }
+.ai-tool-list { list-style: none; padding: 0; margin-top: 1.5rem; }
+.ai-tool-list li { position: relative; padding-left: 1.8rem; margin-bottom: 0.8rem; font-size: 0.95rem; }
+.ai-tool-list li::before { content: '✧'; position: absolute; left: 0; color: var(--accent); }
+
+/* Neon Glow */
+.neon-glow.blue {
+    font-weight: 700;
+    color: var(--accent-bright);
+    text-shadow: none;
+}
+
+.event-badge {
+    margin-top: 4rem;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    background: var(--bg-secondary);
+    border-left: 6px solid var(--accent-navy);
+    border-radius: var(--radius-md);
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--bg);
+    backdrop-filter: blur(20px);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border-navy);
+    box-shadow: var(--shadow-card);
+}
+
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0.9); opacity: 0;}
+    to {transform:scale(1); opacity: 1;}
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: var(--text-dark);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.yojana-footer {
+    text-align: center;
+    padding: 5rem 2rem;
+    color: var(--text-sub);
+    font-size: 1rem;
+    background: var(--bg);
+    border-top: 1px solid var(--border-navy);
+}
+
+@media (max-width: 768px) {
+    .yojana-container { margin-top: 6rem; }
+    .impact-stats { grid-template-columns: 1fr 1fr; }
+    .event-badge { flex-direction: column; text-align: center; }
+}
