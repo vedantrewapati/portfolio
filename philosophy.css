@@ -1,0 +1,144 @@
+/* ═══════════════════════════════════════════
+   PHILOSOPHY Sub-page — philosophy.css
+═══════════════════════════════════════════ */
+
+/* Global variables from style.css used */
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body.transitioning {
+    overflow: hidden !important;
+}
+
+.phi-container {
+    max-width: 800px;
+    margin: 10rem auto 4rem;
+    padding: 0 2rem;
+}
+
+.phi-header {
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.phi-title {
+    font-family: var(--ff-head);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    margin: 1rem 0;
+    background: linear-gradient(135deg, var(--text-main), var(--accent-navy));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.phi-subtitle {
+    font-size: 1.2rem;
+    color: var(--text);
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.phi-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.phi-card {
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    box-shadow: var(--shadow-navy);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.phi-card:hover {
+    background: var(--bg-secondary);
+    box-shadow: var(--shadow-navy);
+    border-color: var(--accent-navy);
+    transform: translateY(-8px);
+}
+
+.phi-icon {
+    font-size: 2.2rem;
+    color: var(--accent-dark);
+    flex-shrink: 0;
+    background: var(--bg);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    border: 1px solid var(--border-card);
+    box-shadow: var(--shadow-soft);
+}
+
+.phi-content h3 {
+    font-family: var(--ff-head);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.phi-content p {
+    font-size: 1.05rem;
+    color: var(--text-sub);
+    margin: 0;
+}
+
+.phi-footer {
+    text-align: center;
+    padding: 5rem 2rem;
+    color: var(--text-sub);
+    font-size: 1rem;
+    background: var(--bg);
+    border-top: 1px solid var(--border-navy);
+}
+
+/* Antigravity Floating Animations */
+@keyframes floatUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes floatDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+    100% { transform: translateY(0); }
+}
+
+.float-1 { animation: floatUp 6s ease-in-out infinite; }
+.float-2 { animation: floatDown 7s ease-in-out infinite; }
+.float-3 { animation: floatUp 8s ease-in-out infinite; }
+
+/* Fade-in Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .phi-container { margin-top: 8rem; }
+    .phi-card { flex-direction: column; padding: 2.5rem; text-align: center; gap: 1.5rem; }
+    .float-1, .float-2, .float-3 { animation: none; } /* Disable float on mobile for better tap targets */
+}

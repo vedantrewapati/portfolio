@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    /* 360-Degree Theme Persistence (Flash Prevention) */
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      const bg = savedTheme === 'dark' ? '#0D0D0E' : '#FFFFFF';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.style.backgroundColor = bg;
+    })();
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interests | Vedant Rewapati</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="interests.css">
+</head>
+<body class="subpage">
+    <canvas id="stardust-canvas"></canvas>
+
+    <div class="subpage-nav">
+        <button id="theme-toggle" class="theme-switch subpage-theme-toggle" aria-label="Toggle Paradox Mode">
+            <i class="ph ph-sun" id="theme-icon"></i>
+        </button>
+    </div>
+
+    <!-- Universal Anchor (FAB) -->
+    <div class="universal-anchor-wrap">
+        <a href="index.html" class="universal-anchor" onclick="returnToOrbit(); return false;">
+            <i class="ph ph-arrow-left"></i>
+            <span class="anchor-text">Return to Orbit</span>
+        </a>
+    </div>
+
+    <main class="interests-container">
+        <header class="interests-header fade-in">
+            <p class="section-label">〇 Beyond the Code</p>
+            <h1 class="interests-title">Interests & Curiosities</h1>
+            <p class="interests-subtitle">A collection of mysteries and ideas that fuel my imagination.</p>
+        </header>
+
+        <!-- SPACE SECTION -->
+        <section id="space" class="interests-section fade-in">
+            <h2 class="category-heading">Space & Paradoxes</h2>
+            <div class="interests-grid">
+                <!-- Entry 01 -->
+                <article class="interest-card glass-card" data-key="grandfather-paradox">
+                    <span class="card-number">01</span>
+                    <div class="card-icon">⏰</div>
+                    <h3>The Grandfather Paradox</h3>
+                    <p class="card-hint">Causality & Time Travel</p>
+                </article>
+
+                <!-- Entry 02 -->
+                <article class="interest-card glass-card" data-key="black-hole-paradox">
+                    <span class="card-number">02</span>
+                    <div class="card-icon">🌀</div>
+                    <h3>Black Hole Paradox</h3>
+                    <p class="card-hint">Quantum Physics</p>
+                </article>
+
+                <!-- Entry 03 -->
+                <article class="interest-card glass-card" data-key="consciousness">
+                    <span class="card-number">03</span>
+                    <div class="card-icon">⚪</div>
+                    <h3>Consciousness</h3>
+                    <p class="card-hint">The Human Mind</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- BOOKS SECTION -->
+        <section id="books" class="interests-section fade-in">
+            <h2 class="category-heading">Reading List</h2>
+            <div class="interests-grid">
+                <!-- Book 01 -->
+                <article class="interest-card glass-card" data-key="atomic-habits">
+                    <span class="card-number">04</span>
+                    <div class="card-icon">📚</div>
+                    <h3>Atomic Habits</h3>
+                    <p class="card-hint">James Clear</p>
+                </article>
+
+                <!-- Book 02 -->
+                <article class="interest-card glass-card" data-key="ikigai">
+                    <span class="card-number">05</span>
+                    <div class="card-icon">❤️</div>
+                    <h3>Ikigai</h3>
+                    <p class="card-hint">Find Your Purpose</p>
+                </article>
+
+                <!-- Book 03 -->
+                <article class="interest-card glass-card" data-key="psychology-of-money">
+                    <span class="card-number">06</span>
+                    <div class="card-icon">💰</div>
+                    <h3>Psychology of Money</h3>
+                    <p class="card-hint">Morgan Housel</p>
+                </article>
+
+                <!-- Book 04 -->
+                <article class="interest-card glass-card" data-key="cosmos">
+                    <span class="card-number">07</span>
+                    <div class="card-icon">🪐</div>
+                    <h3>Cosmos</h3>
+                    <p class="card-hint">Carl Sagan</p>
+                </article>
+
+                <!-- Book 05 -->
+                <article class="interest-card glass-card" data-key="subtle-art">
+                    <span class="card-number">08</span>
+                    <div class="card-icon">🔥</div>
+                    <h3>The Subtle Art</h3>
+                    <p class="card-hint">Mark Manson</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Structure -->
+    <div id="interests-modal" class="modal-overlay">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="close-modal">✖️</button>
+            <div class="modal-body">
+                <div class="modal-icon" id="modal-icon"></div>
+                <h2 id="modal-title"></h2>
+                <p id="modal-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="interests-footer">
+        <p>The journey of learning never ends. 🌌</p>
+    </footer>
+
+    <script src="interests.js"></script>
+
+    <!-- Celestial Transitions -->
+    <div id="black-hole-overlay" class="stellar-overlay"></div>
+    <div id="white-hole-overlay" class="stellar-overlay"></div>
+
+    <!-- Magnetic Paradox Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

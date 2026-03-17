@@ -1,0 +1,275 @@
+/* ═══════════════════════════════════════════
+   JOURNEY PAGE SPECIFIC STYLES
+═══════════════════════════════════════════ */
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+body.transitioning {
+    overflow: hidden !important;
+}
+
+#scroll-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    will-change: transform;
+    transition: filter 0.3s ease-out;
+}
+
+.wormhole-blur {
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+/* ═══════════════ NAVIGATION ═══════════════ */
+/* Managed globally in style.css (.back-link-nav) */
+
+/* ═══════════════ HERO ═══════════════ */
+.journey-hero {
+    padding: 120px 2rem 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.journey-tag {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.journey-title {
+    font-family: var(--ff-head);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin: 1rem 0;
+    background: linear-gradient(135deg, var(--text-main), var(--accent-navy));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.journey-subtitle {
+    font-size: 1.1rem;
+    color: var(--text);
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ═══════════════ TIMELINE ═══════════════ */
+.journey-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 2rem 120px;
+}
+
+.timeline-wrapper {
+    position: relative;
+    padding-left: 2rem; /* Single side layout for clarity */
+}
+
+/* The vertical line */
+.timeline-line {
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    width: 2px;
+    height: 0%; /* Adjusted via JS */
+    background: linear-gradient(to bottom, var(--accent-navy), var(--accent-bright));
+    transform-origin: top;
+    transition: height 0.1s linear;
+}
+
+/* Gray background line */
+.timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    width: 2px;
+    height: 100%;
+    background: var(--border-default);
+}
+
+.milestone-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.milestone-item {
+    position: relative;
+    padding-left: 3rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* The Marker/Star */
+.milestone-marker {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-primary);
+    border: 3px solid var(--accent-navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    position: relative;
+    font-size: 1.5rem;
+    color: var(--accent-navy);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+}
+
+.milestone-item:hover .milestone-marker {
+    transform: scale(1.1);
+    border-color: var(--accent-bright);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.milestone-content {
+    position: relative;
+    max-width: 500px;
+}
+
+.timeline-content {
+    background: var(--surface);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-navy);
+    width: 45%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.milestone-item:hover .timeline-content {
+    transform: translateY(-8px);
+    border-color: var(--accent-navy);
+    box-shadow: 0 12px 40px rgba(0, 31, 63, 0.15);
+}
+
+.milestone-date {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-navy);
+    color: var(--accent-navy);
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 999px;
+    margin-bottom: 0.6rem;
+}
+
+.milestone-title {
+    font-family: var(--ff-head);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.milestone-desc {
+    color: var(--text-sub);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ═══════════════ HOVER POPOVER ═══════════════ */
+.milestone-popover {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 0;
+    padding: 0.8rem 1.2rem;
+    min-width: 240px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    pointer-events: none;
+    z-index: 20;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--bg-primary);
+    color: var(--text-sub);
+    border: 1px solid var(--accent-navy);
+    box-shadow: var(--shadow-navy);
+    border-radius: var(--radius-md);
+}
+
+.milestone-popover::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    background: var(--bg-primary);
+    border-right: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+    transform: rotate(45deg);
+}
+
+.milestone-title:hover + .milestone-desc + .milestone-popover,
+.milestone-item:hover .milestone-popover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* ═══════════════ ANIMATIONS ═══════════════ */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+.journey-footer {
+    text-align: center;
+    padding: 5rem 2rem;
+    color: var(--text-sub);
+    font-size: 1rem;
+    background: var(--bg);
+    border-top: 1px solid var(--border-navy);
+}
+
+@media (max-width: 600px) {
+    .journey-nav {
+        top: 1rem;
+        left: 1rem;
+    }
+    .journey-hero {
+        padding-top: 100px;
+    }
+    .journey-title {
+        font-size: 2.5rem;
+    }
+    .timeline-wrapper {
+        padding-left: 1rem;
+    }
+    .timeline-line, .timeline-wrapper::before {
+        left: 1rem;
+    }
+    .milestone-marker {
+        left: -11px;
+    }
+}

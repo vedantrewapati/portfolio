@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    /* 360-Degree Theme Persistence (Flash Prevention) */
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      const bg = savedTheme === 'dark' ? '#0D0D0E' : '#FFFFFF';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.style.backgroundColor = bg;
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vedant Rewapati | IT Student & Tech Explorer</title>
+  <meta name="description" content="Portfolio of Vedant Rewapati — First-Year IT Student at JEC, Jabalpur. Passionate about coding, space, and technology." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Devicons for tech logos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <!-- Phosphor Icons for contact -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- ═══════════════ STELLAR BIRTH LOADER ═══════════════ -->
+    <div id="big-bang-loader">
+        <div id="singularity"></div>
+        <div id="loader-text">Initializing Mission: Vedant Rewapati</div>
+    </div>
+
+  <canvas id="stardust-canvas"></canvas>
+
+  <!-- ═══════════════ CELESTIAL TRANSITIONS ═══════════════ -->
+  <div id="black-hole-overlay" class="stellar-overlay"></div>
+  <div id="white-hole-overlay" class="stellar-overlay"></div>
+
+
+  <!-- ═══════════════ NAVIGATION ═══════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">V.R</span>
+      <ul class="nav-links">
+        <li><a href="#about">Orbit</a></li>
+        <li><a href="#projects">Mission Log</a></li>
+        <li><a href="interests.html">Interests</a></li>
+        <li><a href="#skills">Stack</a></li>
+        <li><a href="#contact">Signals</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-switch" aria-label="Toggle Paradox Mode">
+        <i class="ph ph-sun" id="theme-icon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section id="hero">
+    <div class="hero-bg-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-content fade-in">
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-ring"></div>
+        <img src="hero.png" alt="Vedant Rewapati" class="hero-photo" />
+      </div>
+      <div class="hero-text">
+        <p class="hero-tag">✦ Currently Orbiting — Jabalpur, India</p>
+        <h1 class="hero-headline">
+          Vedant Rewapati<br />
+          <span class="headline-sub">IT Student at JEC</span>
+        </h1>
+        <p class="hero-desc">
+          Exploring the Mysteries of Tech and Space.
+        </p>
+        <div class="hero-cta-row">
+          <a href="#projects" class="btn-primary">View Mission Log</a>
+          <a href="#contact" class="btn-ghost">Send a Signal</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section id="about" class="section">
+    <div class="section-inner fade-in">
+      <div class="section-label">〇 Current Orbit</div>
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <a href="journey.html" class="about-card glass-card" style="text-decoration: none; display: block; height: 100%;">
+          <div class="about-card-icon">🌏</div>
+          <h3>Location</h3>
+          <p>Based in <strong>Jabalpur</strong>. Click to join the voyage through my life story.</p>
+        </a>
+        <a href="education.html" class="about-card glass-card" style="text-decoration: none; display: block; height: 100%;">
+          <div class="about-card-icon">🎓</div>
+          <h3>Education</h3>
+          <p>First-Year <strong>IT Student</strong>. Click to explore my academic trajectory and curriculum.</p>
+        </a>
+        <a href="interests.html" class="about-card glass-card" style="text-decoration: none; display: block; height: 100%;">
+          <div class="about-card-icon">🔭</div>
+          <h3>Interests</h3>
+          <p>Fascinated by <strong>space, cosmic mysteries</strong>, and the human mind. Click to explore the library.</p>
+        </a>
+        <a href="philosophy.html" class="about-card glass-card" style="text-decoration: none; display: block; height: 100%;">
+          <div class="about-card-icon">⚡</div>
+          <h3>Philosophy</h3>
+          <p>Logic meets Wonder. Click to explore the pillars of my <strong>Voyager Mindset</strong>.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <section id="projects" class="section section-alt">
+    <div class="section-inner fade-in">
+      <div class="section-label">〇 Mission Log</div>
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <article class="project-card glass-card">
+          <div class="project-card-header">
+            <span class="project-badge">Civic Tech</span>
+            <span class="project-status active">● Live</span>
+          </div>
+          <h3 class="project-title">Yojna 360</h3>
+          <p class="project-desc">
+            A multilingual government scheme discovery portal designed to empower citizens — especially senior citizens — to find and understand welfare schemes. Built with accessibility and simplicity at its core.
+          </p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">AI Chatbot</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/vedantrewapati/TechBlitz.git" target="_blank" rel="noopener" class="project-link" id="yojna-github">
+              <i class="ph ph-github-logo"></i> Code
+            </a>
+            <a href="yojana.html" class="project-link highlight" id="yojna-demo">
+              <i class="ph ph-arrow-square-out"></i> Demo
+            </a>
+          </div>
+        </article>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TECH STACK ═══════════════ -->
+  <section id="skills" class="section">
+    <div class="section-inner fade-in">
+      <div class="section-label">〇 Tech Stack</div>
+      <h2 class="section-title">Tools I Wield</h2>
+      <p class="section-subtitle">Technologies orbiting my skill set — each with its own gravitational pull.</p>
+      <div class="skills-grid">
+        <div class="skill-item float-1">
+          <img src="antigravity_logo.png" alt="Antigravity" class="skill-logo" />
+          <span>Antigravity</span>
+        </div>
+        <div class="skill-item float-2">
+          <img src="gemini_logo.png" alt="Gemini" class="skill-logo" />
+          <span>Gemini</span>
+        </div>
+        <div class="skill-item float-3">
+          <img src="chatgpt_logo.png" alt="ChatGPT" class="skill-logo" />
+          <span>ChatGPT</span>
+        </div>
+        <div class="skill-item float-4">
+          <i class="devicon-github-original colored" style="font-size: 3rem;"></i>
+          <span>GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section id="contact" class="section section-alt">
+    <div class="section-inner fade-in">
+      <div class="section-label">〇 Signals</div>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">Transmitting from Jabalpur. Open to collaborations, ideas, and cosmic discussions.</p>
+      <div class="contact-links">
+        <a href="mailto:vedantrewapati08@gmail.com" class="contact-card glass-card" id="contact-email">
+          <i class="ph ph-envelope-simple"></i>
+          <span>Email</span>
+        </a>
+        <a href="https://www.linkedin.com/in/vedant-rewapati-88b1b0380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" class="contact-card glass-card" id="contact-linkedin">
+          <i class="ph ph-linkedin-logo"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://www.instagram.com/v_edant7?igsh=ZXN5amRyMnZsY28w" target="_blank" rel="noopener" class="contact-card glass-card" id="contact-instagram">
+          <i class="ph ph-instagram-logo"></i>
+          <span>Instagram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">Vedant Rewapati</span>
+      <p id="footer-quote" class="footer-quote">Cogito, ergo sum</p>
+      <p class="footer-copy">© 2026 · Crafted with curiosity &amp; coffee · Jabalpur 🌌</p>
+    </div>
+  </footer>
+
+    <!-- Magnetic Paradox Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

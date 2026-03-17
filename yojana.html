@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    /* 360-Degree Theme Persistence (Flash Prevention) */
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      const bg = savedTheme === 'dark' ? '#0D0D0E' : '#FFFFFF';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.style.backgroundColor = bg;
+    })();
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yojana 360 | Project Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="yojana.css">
+</head>
+<body class="subpage">
+    <canvas id="stardust-canvas"></canvas>
+
+    <div class="subpage-nav">
+        <button id="theme-toggle" class="theme-switch subpage-theme-toggle" aria-label="Toggle Paradox Mode">
+            <i class="ph ph-sun" id="theme-icon"></i>
+        </button>
+    </div>
+
+    <!-- Universal Anchor (FAB) -->
+    <div class="universal-anchor-wrap">
+        <a href="index.html" class="universal-anchor" onclick="returnToOrbit(); return false;">
+            <i class="ph ph-arrow-left"></i>
+            <span class="anchor-text">Return to Orbit</span>
+        </a>
+    </div>
+
+    <main class="yojana-container">
+        <!-- HERO & IMPACT -->
+        <header class="yojana-header fade-in">
+            <p class="section-label">〇 Mission Showcase</p>
+            <h1 class="yojana-title">Yojana 360</h1>
+            <p class="yojana-subtitle">India's Smartest Scheme Discovery Platform.</p>
+            
+            <div class="impact-stats">
+                <div class="stat-card glass-card">
+                    <span class="stat-num" data-val="500">0</span><span class="stat-plus">+</span>
+                    <p>Active Schemes</p>
+                </div>
+                <div class="stat-card glass-card">
+                    <span class="stat-num" data-val="14">0</span><span class="stat-plus">Cr+</span>
+                    <p>Citizens Helped</p>
+                </div>
+                <div class="stat-card glass-card">
+                    <span class="stat-num" data-val="28">0</span>
+                    <p>States Covered</p>
+                </div>
+                <div class="stat-card glass-card">
+                    <span class="stat-num" data-val="13">0</span>
+                    <p>Languages</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- INTERFACE SHOWCASE -->
+        <section id="interface" class="yojana-section fade-in">
+            <h2 class="category-heading">The Interface</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item glass-card" onclick="openModal('yojana_assets/yojana_detail_1.png')">
+                    <img src="yojana_assets/yojana_detail_1.png" alt="Secure Login">
+                    <span>Secure Onboarding</span>
+                </div>
+                <div class="gallery-item glass-card" onclick="openModal('yojana_assets/yojana_list.png')">
+                    <img src="yojana_assets/yojana_list.png" alt="Main Dashboard">
+                    <span>Central Dashboard</span>
+                </div>
+                <div class="gallery-item glass-card" onclick="openModal('yojana_assets/yojana_popular.png')">
+                    <img src="yojana_assets/yojana_popular.png" alt="Popular Schemes">
+                    <span>Popular Categories</span>
+                </div>
+                <div class="gallery-item glass-card" onclick="openModal('yojana_assets/yojana_footer.png')">
+                    <img src="yojana_assets/yojana_footer.png" alt="Citizen Profile Form">
+                    <span>Smart Profile Engine</span>
+                </div>
+                <div class="gallery-item glass-card" onclick="openModal('yojana_assets/yojana_home.png')">
+                    <img src="yojana_assets/yojana_home.png" alt="Available Schemes">
+                    <span>Intelligent Matching</span>
+                </div>
+                <div class="gallery-item glass-card" onclick="openModal('yojana_assets/yojana_login.png')">
+                    <img src="yojana_assets/yojana_login.png" alt="Scheme Details">
+                    <span>Document Checklist</span>
+                </div>
+                <div class="gallery-item glass-card" onclick="openModal('yojana_assets/yojana_detail_2.png')">
+                    <img src="yojana_assets/yojana_detail_2.png" alt="Eligibility Analysis">
+                    <span>Scheme Deep-Dive</span>
+                </div>
+                <div class="gallery-item glass-card" onclick="openModal('yojana_assets/yojana_profile_full.png')">
+                    <img src="yojana_assets/yojana_profile_full.png" alt="How to Use">
+                    <span>Process & Support</span>
+                </div>
+                <div class="gallery-item glass-card" onclick="openModal('yojana_assets/yojana_profile_empty.png')">
+                    <img src="yojana_assets/yojana_profile_empty.png" alt="State Selection">
+                    <span>Localized Discovery</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section id="process" class="yojana-section fade-in">
+            <h2 class="category-heading">How it Works</h2>
+            <div class="process-steps">
+                <div class="step-card glass-card">
+                    <div class="step-num">01</div>
+                    <h3>Choose a Category</h3>
+                    <p>Select from Education, Agriculture, Health, Women, Business or Employment.</p>
+                </div>
+                <div class="step-card glass-card">
+                    <div class="step-num">02</div>
+                    <h3>Fill Your Profile</h3>
+                    <p>Enter age, state, gender, caste & income — takes less than 30 seconds.</p>
+                </div>
+                <div class="step-card glass-card">
+                    <div class="step-num">03</div>
+                    <h3>See Matched Schemes</h3>
+                    <p>AI instantly shows all schemes you qualify for with an eligibility match score.</p>
+                </div>
+                <div class="step-card glass-card">
+                    <div class="step-num">04</div>
+                    <h3>Apply Directly</h3>
+                    <p>Click the official government link to apply — no third-party fees, ever.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BEHIND THE DEVELOPMENT -->
+        <section id="behind-development" class="yojana-section fade-in">
+            <h2 class="category-heading">Behind the Development</h2>
+            
+            <div class="dev-grid">
+                <!-- Motivation -->
+                <article class="dev-card glass-card">
+                    <div class="dev-card-icon">🏗️</div>
+                    <h3>Tech for Social Impact</h3>
+                    <p class="dev-text">
+                        I built <strong>Yojana 360</strong> because I believe technology should bridge the gap between complex government systems and the citizens who need them most. My goal was to simplify the lives of rural families and senior citizens in Jabalpur and beyond.
+                    </p>
+                </article>
+
+                <!-- AI Stack -->
+                <article class="dev-card glass-card">
+                    <div class="dev-card-icon">🤖</div>
+                    <h3>Built with Modern AI</h3>
+                    <p class="dev-text">
+                        As an AI-native developer, I leveraged cutting-edge tools to accelerate the development of this platform in just 24 hours during <strong>CodeKumbh 2.0</strong>.
+                    </p>
+                    <ul class="ai-tool-list">
+                        <li><span class="neon-glow blue">Antigravity</span>: Used for rapid prototyping and interactive development.</li>
+                        <li><span class="neon-glow blue">Gemini</span> & <span class="neon-glow blue">ChatGPT</span>: Acted as my pair-programmers for complex logic and multi-language engine architecture.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <!-- The Event -->
+            <div class="event-badge glass-card fade-in">
+                <div class="event-icon">🏆</div>
+                <p>Proudly developed and presented during <strong>CodeKumbh 2.0</strong>, organized by <strong>JLUG (JEC Linux User Group)</strong>.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Gallery -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <footer class="yojana-footer">
+        <p>© 2026 · Crafted with curiosity &amp; coffee · Jabalpur 🌌</p>
+    </footer>
+
+    <script src="yojana.js"></script>
+
+    <!-- Celestial Transitions -->
+    <div id="black-hole-overlay" class="stellar-overlay"></div>
+    <div id="white-hole-overlay" class="stellar-overlay"></div>
+
+    <!-- Magnetic Paradox Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

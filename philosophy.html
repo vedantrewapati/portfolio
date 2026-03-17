@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    /* 360-Degree Theme Persistence (Flash Prevention) */
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      const bg = savedTheme === 'dark' ? '#0D0D0E' : '#FFFFFF';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.style.backgroundColor = bg;
+    })();
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy | Vedant Rewapati</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="philosophy.css">
+</head>
+<body class="subpage">
+    <canvas id="stardust-canvas"></canvas>
+
+    <div class="subpage-nav">
+        <button id="theme-toggle" class="theme-switch subpage-theme-toggle" aria-label="Toggle Paradox Mode">
+            <i class="ph ph-sun" id="theme-icon"></i>
+        </button>
+    </div>
+
+    <!-- Universal Anchor (FAB) -->
+    <div class="universal-anchor-wrap">
+        <a href="index.html" class="universal-anchor" onclick="returnToOrbit(); return false;">
+            <i class="ph ph-arrow-left"></i>
+            <span class="anchor-text">Return to Orbit</span>
+        </a>
+    </div>
+
+    <main class="phi-container">
+        <header class="phi-header fade-in">
+            <p class="section-label">〇 The Voyager Mindset</p>
+            <h1 class="phi-title">My Philosophy</h1>
+            <p class="phi-subtitle">The soul of my voyage — where precision meets curiosity.</p>
+        </header>
+
+        <section class="phi-pillars">
+            <!-- Pillar 01 -->
+            <article class="phi-card nebula-card float-1 fade-in">
+                <div class="phi-icon">🔭</div>
+                <div class="phi-content">
+                    <h3>Logic meets Wonder</h3>
+                    <p>Engineering is about more than just syntax; it's about solving the mysteries of the human experience through technology. I strive to find the elegant balance between cold logic and the wonder of creation.</p>
+                </div>
+            </article>
+
+            <!-- Pillar 02 -->
+            <article class="phi-card nebula-card float-2 fade-in">
+                <div class="phi-icon">🧭</div>
+                <div class="phi-content">
+                    <h3>Systems over Goals</h3>
+                    <p>Inspired by <strong>'Atomic Habits,'</strong> I focus on building robust systems that allow for continuous growth and discovery. A goal is a destination, but a system is the engine of the voyage.</p>
+                </div>
+            </article>
+
+            <!-- Pillar 03 -->
+            <article class="phi-card nebula-card float-3 fade-in">
+                <div class="phi-icon">🚀</div>
+                <div class="phi-content">
+                    <h3>The Voyager Mindset</h3>
+                    <p>The universe is vast and code is infinite. I approach every project with the curiosity of a space explorer and the precision of a scientist, always looking for the next frontier to conquer.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="phi-footer">
+        <p>© 2026 · Crafted with curiosity &amp; coffee · Jabalpur 🌌</p>
+    </footer>
+
+    <script src="philosophy.js"></script>
+
+    <!-- Celestial Transitions -->
+    <div id="black-hole-overlay" class="stellar-overlay"></div>
+    <div id="white-hole-overlay" class="stellar-overlay"></div>
+
+    <!-- Magnetic Paradox Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

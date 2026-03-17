@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    /* 360-Degree Theme Persistence (Flash Prevention) */
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      const bg = savedTheme === 'dark' ? '#0D0D0E' : '#FFFFFF';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.style.backgroundColor = bg;
+    })();
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | Vedant Rewapati</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="education.css">
+</head>
+<body class="subpage">
+    <canvas id="stardust-canvas"></canvas>
+
+    <div class="subpage-nav">
+        <button id="theme-toggle" class="theme-switch subpage-theme-toggle" aria-label="Toggle Paradox Mode">
+            <i class="ph ph-sun" id="theme-icon"></i>
+        </button>
+    </div>
+
+    <!-- Universal Anchor (FAB) -->
+    <div class="universal-anchor-wrap">
+        <a href="index.html" class="universal-anchor" onclick="returnToOrbit(); return false;">
+            <i class="ph ph-arrow-left"></i>
+            <span class="anchor-text">Return to Orbit</span>
+        </a>
+    </div>
+
+    <main class="edu-container">
+        <header class="edu-header fade-in">
+            <p class="section-label">〇 Academic Trajectory</p>
+            <h1 class="edu-title">Education & Studies</h1>
+            <p class="edu-subtitle">From early foundations to engineering the future.</p>
+        </header>
+
+        <section class="edu-timeline">
+            <!-- Current -->
+            <article class="edu-card glass-card current fade-in">
+                <div class="edu-tag">Present Station</div>
+                <div class="edu-card-content">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-details">
+                        <span class="edu-date">Aug 2025 to Present 2026</span>
+                        <h3>IT Engineering (B.Tech)</h3>
+                        <p class="edu-org">Jabalpur Engineering College (JEC)</p>
+                        <ul class="edu-list">
+                            <li>Focusing on Core Information Technology principles.</li>
+                            <li>Engaging in Web Development and System Design.</li>
+                            <li><strong>Academic Performance:</strong> 6.81 SGPA (1st Semester).</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 11th - 12th -->
+            <article class="edu-card glass-card fade-in">
+                <div class="edu-tag">Higher Secondary</div>
+                <div class="edu-card-content">
+                    <div class="edu-icon">⚛️</div>
+                    <div class="edu-details">
+                        <span class="edu-date">Indore, India</span>
+                        <h3>Allen Career Institute</h3>
+                        <p class="edu-org">11th & 12th Grade (PCM Branch)</p>
+                        <div class="curriculum-box">
+                            <strong>Academic Achievement:</strong>
+                            <p>Scored 77.8% in MP Board Examination. Achieved a percentile of 92.78% in JEE Mains, demonstrating a specialized focus on STEM excellence.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 6th - 10th -->
+            <article class="edu-card glass-card fade-in">
+                <div class="edu-tag">High School</div>
+                <div class="edu-card-content">
+                    <div class="edu-icon">🏫</div>
+                    <div class="edu-details">
+                        <span class="edu-date">Sanawad</span>
+                        <h3>Vimala Convent Hr. Sec. School</h3>
+                        <p class="edu-org">Primary to Secondary Education</p>
+                        <p class="edu-summary">Built a strong academic foundation across all core subjects. Achieved 80% in CBSE 10th Board Examination. Developed a holistic perspective through balanced extracurricular and scholastic growth.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- LKG - 5th -->
+            <article class="edu-card glass-card fade-in">
+                <div class="edu-tag">Early Orbit</div>
+                <div class="edu-card-content">
+                    <div class="edu-icon">⭐</div>
+                    <div class="edu-details">
+                        <span class="edu-date">Sanawad</span>
+                        <h3>Gurukul Sanawad</h3>
+                        <p class="edu-org">Early Childhood Education</p>
+                        <p class="edu-summary">Where the journey began. Initial years spent in a disciplined and nurturing environment, sparking my early curiosity about the world.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="edu-footer">
+        <p>© 2026 · Crafted with curiosity &amp; coffee · Jabalpur 🌌</p>
+    </footer>
+
+    <script src="education.js"></script>
+
+    <!-- Celestial Transitions -->
+    <div id="black-hole-overlay" class="stellar-overlay"></div>
+    <div id="white-hole-overlay" class="stellar-overlay"></div>
+
+    <!-- Magnetic Paradox Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
